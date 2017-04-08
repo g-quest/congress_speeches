@@ -25,8 +25,7 @@ for response in responseList:
         else:
             print('Response #{0}: {1}, {2}'.format((int(responseList.index(response))+1), response['speaker_last'], response['speaker_party'] ))
 
-# lengthy speeches are broken down into a list. clean up broken speeches for all responses and place in a 
-# separate list
+# lengthy speeches are broken down into a list. clean up broken speeches for all responses and place in a separate list
 i = 0
 speechList = [] #make a list of all the speeches cleaned
 for response in responseList:
@@ -41,8 +40,7 @@ speechList
 wordCountList = ['Speech from response #{0}: {1} words'.format(i + 1, len(response.split())) for i, response in enumerate(speechList)]
 wordCountList 
 
-# use regular expressions to show responses whose title includes the word "ACT", i.e. a response that involves
-# the introduction of a bill
+# use regular expressions to show responses whose title includes the word "ACT", i.e. a response that involves the introduction of a bill
 import re
 for response in responseList:
     found = re.search(r'\bACT\b',response['title'])
